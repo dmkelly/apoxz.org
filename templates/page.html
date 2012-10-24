@@ -8,6 +8,6 @@
 <p>{{ page.date_modified }}</p>
 <div class="row">
 	<div class="span2">{% include 'ssi/nav.html' with nav=child_pages %}</div>
-	<div class="span10">{{ content }}</div>
+	<div class="span10">{{ page.content }}</div>
 </div>
 {% endblock %}
