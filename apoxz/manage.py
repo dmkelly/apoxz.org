@@ -2,6 +2,9 @@
 import os
 import sys
 
+# Required to allow this Django app to be run via upstart
+sys.path.append("/var/www/apoxz.org/")
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "apoxz.settings")
 
