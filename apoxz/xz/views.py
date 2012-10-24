@@ -20,7 +20,7 @@ def main(request):
     if not pages:
         print 'No pages found :('
     else:
-        print 'Found pages'
+        print 'Found pages ' + str(len(pages))
     
     return render_to_response('landing.html', {pages: pages})
 
