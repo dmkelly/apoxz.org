@@ -8,7 +8,7 @@ class PageAdmin(admin.ModelAdmin):
     this value.
     """
     fields = ['parent', 'title', 'hide_date', 'show_date',
-        'sub_title', 'content']
+        'sub_title', 'content', 'weight']
     # readonly_fields = ('show_date',)
 
 class GalleryAdmin(admin.ModelAdmin):
