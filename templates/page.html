@@ -1,0 +1,13 @@
+{% extends "nav.html" %}
+{% block title %}page.title{% endblock %}
+{% block nav %}{% include 'ssi/nav.html' %}{% endblock %}
+{% block content %}
+<h1>{{ page.title }}
+	{% if page.sub_title %}<small>{{ page.sub_title }}</small>{% endif %}
+</h1>
+<p>{{ page.date_modified }}</p>
+<div class="row">
+	<div class="span2">{% include 'ssi/nav.html' with nav='child_pages' %}</div>
+	<div class="span10">{{ content }}</div>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% if nav %}
+	<ul class="nav nav-tabs nav-stacked">
+		{% for page_nav in nav %}
+			<li>
+				<a href="/xz/page/{{ page_nav.slug }}" title="{{ page_nav.title }}">{{ page_nav.title }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}
