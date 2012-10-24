@@ -15,9 +15,11 @@ def main(request):
                               context_instance=RequestContext(request))
 
 def page(request, slug):
+    print(slug)
     page = get_object_or_404(Page, slug=slug)
     child_pages = Page.objects.filter(parent=page)
     return render_to_response('page.html', {
         'nav': util.main_nav(),
-        'page': page
+        'page': page,
+        'child_pages': child_pages
     }, context_instance=RequestContext(request))
