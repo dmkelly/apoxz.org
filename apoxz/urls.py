@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 import settings
 
 # Uncomment the next two lines to enable the admin:
@@ -18,6 +19,8 @@ urlpatterns = patterns('',
     # Direct to XZ app (where our content will be.
     (r'^xz/', include('xz.urls')),
 )
+
+urlpatterns += staticfiles_urlpatterns()
 
 # Allows hosting of static files on the server in debug mode.
 if settings.DEBUG:
