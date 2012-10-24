@@ -2,6 +2,7 @@
 from datetime import date
 from django.db.models import Q
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from apoxz.xz.models import Page
 
 def main(request):
@@ -18,7 +19,7 @@ def main(request):
             Q(hide_date__gt=today) | Q(hide_date__isnull=True) # Make sure page hasn't expired.
         ).order_by('-weight')       # Follow defined order.
 
-    return render_to_response('landing.html', {'pages': pages})
+    return render_to_response('landing.html', {'pages': pages}, context_instance=RequestContext(request))
 
 def page(request, slug):
     page = Page(slug=slug)
