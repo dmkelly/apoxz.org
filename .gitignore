@@ -1,2 +1,5 @@
 .project
 .pydevproject
+*.py[co]
+*.pot
+*.egg-info
