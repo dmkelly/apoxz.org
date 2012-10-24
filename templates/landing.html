@@ -4,13 +4,15 @@
 	<div class="row">
 		<div class="span6 offset2">
 			<h1>Alpha Phi Omega - Xi Zeta Chapter</h1>
-			<ul class="nav nav-tabs nav-stacked">
-				{% for page in pages %}
-					<li>
-						<a href="/xz/page/{{ page.slug }}" title="{{ page.title }}">{{ page.title }}</a>
-					</li>
-				{% endfor %}
-			</ul>
+			{% if pages %}
+				<ul class="nav nav-tabs nav-stacked">
+					{% for page in pages %}
+						<li>
+							<a href="/xz/page/{{ page.slug }}" title="{{ page.title }}">{{ page.title }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
 		</div>
 	</div>
 {% endblock %}

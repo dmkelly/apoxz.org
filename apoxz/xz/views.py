@@ -17,12 +17,8 @@ def main(request):
         ).filter(
 #            Q(hide_date__gt=today) | Q(hide_date__isnull=True) # Make sure page hasn't expired.
         ).order_by('-weight')       # Follow defined order.
-    if not pages:
-        print 'No pages found :('
-    else:
-        print 'Found pages ' + str(len(pages))
-    
-    return render_to_response('landing.html', {pages: pages})
+
+    return render_to_response('landing.html', {'pages': pages})
 
 def page(request, slug):
     page = Page(slug=slug)
