@@ -10,7 +10,7 @@ def main(request):
     
     This is basically a landing page.
     """
-    today = date.now()
+    today = date.today()
     pages = Page.objects.filter(
             parent__isnull=True,    # Only want root-level pages for front page.
             weight__gte=0,          # Only want visible pages.
